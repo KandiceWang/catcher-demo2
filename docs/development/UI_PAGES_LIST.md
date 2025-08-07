@@ -123,7 +123,7 @@
   - 立即聯繫/雇用按鈕
 - **轉換目標**: 促成聯繫或雇用
 
-#### 4. **服務搜尋頁 (Browse Services)**
+#### 4. **服務列表 (Browse Services)**
 - **檔案**: `src/pages/search/JobsPage.tsx`
 - **流程位置**: 首頁 → 尋找服務
 - **主要功能**:

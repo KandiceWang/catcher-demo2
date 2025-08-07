@@ -29,14 +29,11 @@ const Header = () => {
 
           {/* 桌面導航 */}
           <nav className="hidden md:flex items-center space-x-1">
-            <Link to="/find-talent" className="catcher-nav-link">
-              尋找人才
+            <Link to="/talents" className="catcher-nav-link">
+              尋找創作者
             </Link>
-            <Link to="/find-work" className="catcher-nav-link">
-              尋找工作
-            </Link>
-            <Link to="/browse-projects" className="catcher-nav-link">
-              瀏覽專案
+            <Link to="/jobs" className="catcher-nav-link">
+              服務搜尋
             </Link>
             <Link to="/about" className="catcher-nav-link">
               關於我們

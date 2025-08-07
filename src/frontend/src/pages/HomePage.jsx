@@ -76,9 +76,8 @@ const HomePage = () => {
 
   const handleSearch = () => {
     if (searchQuery.trim()) {
-      alert(`搜尋「${searchQuery}」...\n\n將跳轉至服務列表頁面顯示搜尋結果。`);
-      // 實際應用中會跳轉到服務列表頁面
-      // navigate(`/services?search=${encodeURIComponent(searchQuery)}`);
+      // 跳轉至服務列表頁面並帶入搜尋參數
+      navigate(`/jobs?search=${encodeURIComponent(searchQuery)}`);
     } else {
       alert('請輸入搜尋關鍵字');
     }
@@ -91,10 +90,8 @@ const HomePage = () => {
   };
 
   const goToService = (serviceType) => {
-    const serviceName = services.find(s => s.id === serviceType)?.title || serviceType;
-    alert(`即將前往「${serviceName}」服務頁面`);
-    // 實際應用中會跳轉到對應服務頁面
-    // navigate(`/services/${serviceType}`);
+    // 跳轉到服務列表頁面並篩選特定類型
+    navigate(`/jobs?category=${serviceType}`);
   };
 
   const goToSlide = (index) => {

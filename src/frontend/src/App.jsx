@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import TalentsPage from './pages/search/TalentsPage';
 import TalentDetailPage from './pages/talents/TalentDetailPage';
+import JobsPage from './pages/search/JobsPage';
 import './App.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/talents" element={<TalentsPage />} />
           <Route path="/talents/:id" element={<TalentDetailPage />} />
+          <Route path="/jobs" element={<JobsPage />} />
           {/* 可以在這裡添加更多路由 */}
         </Routes>
       </div>
