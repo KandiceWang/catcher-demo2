@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/Header';
 import './TalentsPage.css';
 
 const TalentsPage = () => {
@@ -240,20 +241,7 @@ const TalentsPage = () => {
   return (
     <div className="talents-page">
       {/* 導航欄 */}
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="logo" onClick={goHome}>Catcher</div>
-          <ul className="nav-links">
-            <li><a href="#creators" className="active">尋找創作者</a></li>
-            <li><a href="#become-creator">成為創作者</a></li>
-            <li><a href="#about">關於我們</a></li>
-          </ul>
-          <div className="nav-buttons">
-            <a href="#login" className="btn-secondary">登入</a>
-            <a href="#signup" className="btn-primary">免費註冊</a>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* 主要內容 */}
       <main className="main-content">

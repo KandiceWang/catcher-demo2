@@ -246,9 +246,7 @@ const JobsPage = () => {
 
   // 查看服務詳情
   const viewServiceDetail = (serviceId) => {
-    // 這裡之後會導航到服務詳情頁面
-    console.log(`即將前往服務 ID: ${serviceId} 的詳情頁面`);
-    // navigate(`/services/${serviceId}`);
+    navigate(`/jobs/${serviceId}`);
   };
 
   // 生成星星評分

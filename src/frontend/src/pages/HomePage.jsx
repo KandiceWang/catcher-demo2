@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Header from '../components/Header';
 import './HomePage.css';
 
 const HomePage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
   
   const slides = [
     {
@@ -55,25 +57,6 @@ const HomePage = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  // 導航欄滾動效果
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbar = document.querySelector('.navbar');
-      if (navbar) {
-        if (window.scrollY > 50) {
-          navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-          navbar.style.boxShadow = '0 2px 20px rgba(44, 95, 95, 0.1)';
-        } else {
-          navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-          navbar.style.boxShadow = 'none';
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const handleSearch = () => {
     if (searchQuery.trim()) {
       // 跳轉至服務列表頁面並帶入搜尋參數
@@ -99,26 +82,13 @@ const HomePage = () => {
   };
 
   const goHome = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate('/');
   };
 
   return (
     <div className="min-h-screen">
       {/* 導航欄 */}
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="logo" onClick={goHome}>Catcher</div>
-          <ul className="nav-links">
-            <li><Link to="/talents">尋找創作者</Link></li>
-            <li><a href="#become-creator">成為創作者</a></li>
-            <li><a href="#about">關於我們</a></li>
-          </ul>
-          <div className="nav-buttons">
-            <a href="#login" className="btn-secondary">登入</a>
-            <a href="#signup" className="btn-primary">免費註冊</a>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* 主要內容 */}
       <main className="main-content">

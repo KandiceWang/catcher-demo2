@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Header from '../../components/Header';
 import './TalentDetailPage.css';
 
 const TalentDetailPage = () => {
@@ -173,6 +174,9 @@ const TalentDetailPage = () => {
 
   return (
     <div className="talent-detail-page">
+      {/* 導航欄 */}
+      <Header />
+      
       {/* 麵包屑導航 */}
       <div className="breadcrumb">
         <Link to="/">首頁</Link> &gt; <Link to="/talents">創作者列表</Link> &gt; {talentData.name}

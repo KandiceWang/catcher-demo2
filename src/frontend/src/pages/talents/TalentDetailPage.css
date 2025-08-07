@@ -23,6 +23,7 @@
   padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
+  margin-top: 80px; /* 為 Header 留出空間 */
   background: var(--gradient-bg);
   min-height: 100vh;
 }
