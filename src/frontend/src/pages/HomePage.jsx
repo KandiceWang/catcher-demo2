@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -111,7 +112,7 @@ const HomePage = () => {
         <div className="nav-container">
           <div className="logo" onClick={goHome}>Catcher</div>
           <ul className="nav-links">
-            <li><a href="#creators">尋找創作者</a></li>
+            <li><Link to="/talents">尋找創作者</Link></li>
             <li><a href="#become-creator">成為創作者</a></li>
             <li><a href="#about">關於我們</a></li>
           </ul>
