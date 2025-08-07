@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './TalentsPage.css';
 
 const TalentsPage = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('');
   const [levelFilter, setLevelFilter] = useState('');
@@ -216,9 +218,7 @@ const TalentsPage = () => {
   };
 
   const viewTalentDetail = (talentId) => {
-    alert(`即將前往創作者 ID: ${talentId} 的詳情頁面`);
-    // 實際應用中會跳轉到創作者詳情頁
-    // navigate(`/talents/${talentId}`);
+    navigate(`/talents/${talentId}`);
   };
 
   const changePage = (page) => {
