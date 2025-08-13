@@ -1,0 +1,136 @@
+/* Catcher 風格提案 A - 溫暖專業風格 */
+/* 基於附圖分析的配色系統 */
+
+:root {
+  /* 主要品牌色彩系統 - 溫暖專業版 */
+  --color-primary: #2C5F5F;         /* 深青色 - 主要品牌色，專業穩重 */
+  --color-accent: #F06F5A;          /* 珊瑚橘 - 強調色，溫暖活力 */
+  --color-warm-bg: #FDF6E3;         /* 米白背景 - 溫暖中性 */
+  --color-card-blue: #B8E6E6;       /* 淺藍卡片 - 清新信任 */
+  --color-card-yellow: #F5E6A3;     /* 淺黃卡片 - 溫暖友善 */
+  --color-card-mint: #C8E6C9;       /* 淺薄荷 - 成長希望 */
+  
+  /* 中性色系 */
+  --color-white: #FFFFFF;
+  --color-text-primary: #2C5F5F;    /* 主要文字色 */
+  --color-text-secondary: #5A7F7F;  /* 次要文字色 */
+  --color-text-muted: #8FA8A8;      /* 輔助文字色 */
+  --color-border: #E0EDE3;          /* 邊框色 */
+  --color-shadow: rgba(44, 95, 95, 0.1); /* 陰影色 */
+  
+  /* 功能色彩 */
+  --color-success: #4CAF50;
+  --color-warning: #FF9800;
+  --color-error: #F44336;
+  --color-info: #2196F3;
+  
+  /* 漸變系統 */
+  --gradient-warm: linear-gradient(135deg, var(--color-accent) 0%, #FF8A65 100%);
+  --gradient-cool: linear-gradient(135deg, var(--color-primary) 0%, #4DB6AC 100%);
+  --gradient-bg: linear-gradient(180deg, var(--color-warm-bg) 0%, #F0F7FF 100%);
+}
+
+/* 基礎樣式 */
+body {
+  font-family: 'Inter', 'Noto Sans TC', sans-serif;
+  background: var(--gradient-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+/* 按鈕系統 */
+.btn-primary {
+  background: var(--gradient-warm);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(240, 111, 90, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(240, 111, 90, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* 卡片系統 */
+.card-warm {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 20px var(--color-shadow);
+  transition: all 0.3s ease;
+}
+
+.card-warm:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(44, 95, 95, 0.15);
+}
+
+.card-blue {
+  background: var(--color-card-blue);
+  border-radius: 16px;
+  padding: 24px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.card-yellow {
+  background: var(--color-card-yellow);
+  border-radius: 16px;
+  padding: 24px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.card-mint {
+  background: var(--color-card-mint);
+  border-radius: 16px;
+  padding: 24px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* 標題系統 */
+.heading-hero {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.heading-section {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+/* 搜尋介面 */
+.search-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 8px 32px var(--color-shadow);
+}

@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "./styles/catcher-design-system.css";
+
+/* 確保新設計系統優先級 */
+@layer base {
+  :root {
+    /* 整合 Tailwind 與 Catcher 設計系統 */
+    --tw-gradient-from: var(--color-coral);
+    --tw-gradient-to: var(--color-sky);
+  }
+}

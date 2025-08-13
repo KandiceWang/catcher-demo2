@@ -1,0 +1,222 @@
+/* VTuber製作平台 - 全局样式 */
+
+/* 配色系統 - 基于ImportPages_HomePage.md */
+:root {
+  --color-primary: #2C5F5F;
+  --color-accent: #F06F5A;
+  --color-warm-bg: #FDF6E3;
+  --color-card-blue: #B8E6E6;
+  --color-card-yellow: #F5E6A3;
+  --color-card-mint: #C8E6C9;
+  --color-white: #FFFFFF;
+  --color-text-primary: #2C5F5F;
+  --color-text-secondary: #5A7F7F;
+  --color-text-muted: #8FA8A8;
+  --color-border: #E0EDE3;
+  --color-shadow: rgba(44, 95, 95, 0.1);
+  --gradient-warm: linear-gradient(135deg, var(--color-accent) 0%, #FF8A65 100%);
+  --gradient-cool: linear-gradient(135deg, var(--color-primary) 0%, #4DB6AC 100%);
+  --gradient-bg: linear-gradient(180deg, var(--color-warm-bg) 0%, #F0F7FF 100%);
+  
+  /* VTuber特色配色 */
+  --vtuber-purple: #9C27B0;
+  --vtuber-pink: #E91E63;
+  --vtuber-blue: #2196F3;
+  --vtuber-gradient: linear-gradient(135deg, var(--vtuber-purple) 0%, var(--vtuber-pink) 50%, var(--vtuber-blue) 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', 'Inter', sans-serif;
+  background: var(--gradient-bg);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-warm-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* 按钮系统 */
+.btn-primary {
+  background: var(--gradient-warm);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(240, 111, 90, 0.3);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(240, 111, 90, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-vtuber {
+  background: var(--vtuber-gradient);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-vtuber:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(156, 39, 176, 0.3);
+}
+
+.btn-vtuber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-vtuber:hover::before {
+  left: 100%;
+}
+
+/* 加载动画 */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--color-border);
+  border-top: 4px solid var(--color-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 渐入动画 */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-vtuber {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* 卡片阴影效果 */
+.card-shadow {
+  box-shadow: 0 4px 20px var(--color-shadow);
+  transition: all 0.3s ease;
+}
+
+.card-shadow:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(44, 95, 95, 0.15);
+}
+
+/* 文字渐变效果 */
+.text-gradient {
+  background: var(--vtuber-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 隐藏类 */
+.hidden {
+  display: none;
+}
+
+/* 可视性类 */
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}

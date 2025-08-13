@@ -1,0 +1,34 @@
+.homepage {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 确保每个section都有合适的间距 */
+.homepage > * + * {
+  margin-top: 0;
+}
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .homepage {
+    font-size: 14px;
+  }
+}
+
+/* 确保所有section的容器都有合适的padding */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .section-container {
+    padding: 0 1rem;
+  }
+}

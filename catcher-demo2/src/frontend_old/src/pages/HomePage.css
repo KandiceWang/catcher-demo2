@@ -1,0 +1,457 @@
+/* 配色系統 */
+:root {
+    --color-primary: #2C5F5F;
+    --color-accent: #F06F5A;
+    --color-warm-bg: #FDF6E3;
+    --color-card-blue: #B8E6E6;
+    --color-card-yellow: #F5E6A3;
+    --color-card-mint: #C8E6C9;
+    --color-white: #FFFFFF;
+    --color-text-primary: #2C5F5F;
+    --color-text-secondary: #5A7F7F;
+    --color-text-muted: #8FA8A8;
+    --color-border: #E0EDE3;
+    --color-shadow: rgba(44, 95, 95, 0.1);
+    --gradient-warm: linear-gradient(135deg, var(--color-accent) 0%, #FF8A65 100%);
+    --gradient-cool: linear-gradient(135deg, var(--color-primary) 0%, #4DB6AC 100%);
+    --gradient-bg: linear-gradient(180deg, var(--color-warm-bg) 0%, #F0F7FF 100%);
+}
+
+body {
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    background: var(--gradient-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+
+/* 導航欄 */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--color-accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* 按鈕系統 */
+.btn-primary {
+    background: var(--gradient-warm);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(240, 111, 90, 0.3);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(240, 111, 90, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background: var(--color-primary);
+    color: white;
+    text-decoration: none;
+}
+
+/* 主要內容區域 */
+.main-content {
+    margin-top: 80px;
+}
+
+/* 推薦服務輪播 */
+.banner-section {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.banner-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-slide.active {
+    opacity: 1;
+}
+
+.banner-content {
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.banner-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.banner-description {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* 輪播指示器 */
+.banner-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* 搜尋區塊 */
+.search-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.search-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.search-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+}
+
+.search-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 8px 32px var(--color-shadow);
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    gap: 8px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    background: transparent;
+}
+
+.search-btn {
+    background: var(--gradient-warm);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(240, 111, 90, 0.4);
+}
+
+/* 服務類型區塊 */
+.services-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px var(--color-shadow);
+    transition: all 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(44, 95, 95, 0.15);
+}
+
+.service-card:nth-child(3n+1) {
+    background: var(--color-card-blue);
+}
+
+.service-card:nth-child(3n+2) {
+    background: var(--color-card-yellow);
+}
+
+.service-card:nth-child(3n+3) {
+    background: var(--color-card-mint);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.service-description {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* 信賴指標區塊 */
+.trust-section {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 4rem 2rem;
+    margin: 4rem 0;
+}
+
+.trust-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.trust-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 3rem;
+}
+
+.trust-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.trust-item {
+    padding: 1rem;
+}
+
+.trust-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+}
+
+.trust-label {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .search-title {
+        font-size: 2rem;
+    }
+
+    .banner-title {
+        font-size: 1.8rem;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .search-section, .services-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner-content {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-title {
+        font-size: 1.5rem;
+    }
+
+    .banner-description {
+        font-size: 1rem;
+    }
+
+    .search-title {
+        font-size: 1.8rem;
+    }
+
+    .trust-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .trust-number {
+        font-size: 2.5rem;
+    }
+}

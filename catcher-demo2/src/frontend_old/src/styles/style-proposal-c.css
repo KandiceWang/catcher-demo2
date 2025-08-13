@@ -1,0 +1,445 @@
+/* Catcher 風格提案 C - 活力創意風格 */
+/* 靈感來源：Dribbble, Behance 等創意平台 */
+
+:root {
+  /* 主要品牌色彩系統 - 活力創意版 */
+  --color-primary: #FF6B35;         /* 活力橘 - 創意能量 */
+  --color-secondary: #7209B7;       /* 紫羅蘭 - 創意靈感 */
+  --color-tertiary: #F72585;        /* 亮粉 - 年輕活力 */
+  --color-accent: #4ECDC4;          /* 青綠 - 清新創意 */
+  --color-yellow: #FFE66D;          /* 明黃 - 樂觀積極 */
+  
+  /* 背景色系 */
+  --color-bg-primary: #FFFBF5;      /* 溫暖白 */
+  --color-bg-secondary: #FFF8E7;    /* 淺黃背景 */
+  --color-bg-gradient: linear-gradient(135deg, #FFE66D 0%, #FF6B35 50%, #7209B7 100%);
+  
+  /* 中性色系 */
+  --color-white: #FFFFFF;
+  --color-black: #2D2D2D;
+  --color-gray-100: #F7F7F7;
+  --color-gray-200: #E8E8E8;
+  --color-gray-300: #CFCFCF;
+  --color-gray-400: #B0B0B0;
+  --color-gray-500: #8E8E8E;
+  --color-gray-600: #6D6D6D;
+  --color-gray-700: #4A4A4A;
+  --color-gray-800: #333333;
+  
+  /* 創意漸變組合 */
+  --gradient-sunset: linear-gradient(135deg, #FF6B35 0%, #F72585 100%);
+  --gradient-ocean: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+  --gradient-purple: linear-gradient(135deg, #7209B7 0%, #A663CC 100%);
+  --gradient-warm: linear-gradient(135deg, #FFE66D 0%, #FF6B35 100%);
+  --gradient-rainbow: linear-gradient(90deg, #FF6B35 0%, #F72585 25%, #7209B7 50%, #4ECDC4 75%, #FFE66D 100%);
+  
+  /* 動態陰影 */
+  --shadow-colorful: 0 10px 30px rgba(255, 107, 53, 0.3);
+  --shadow-purple: 0 10px 30px rgba(114, 9, 183, 0.3);
+  --shadow-pink: 0 10px 30px rgba(247, 37, 133, 0.3);
+  --shadow-teal: 0 10px 30px rgba(78, 205, 196, 0.3);
+  --shadow-multi: 0 20px 40px rgba(255, 107, 53, 0.2), 0 10px 20px rgba(247, 37, 133, 0.1);
+  
+  /* 字體系統 */
+  --font-display: 'Poppins', 'Noto Sans TC', sans-serif;
+  --font-body: 'Inter', 'Noto Sans TC', sans-serif;
+  --font-accent: 'Pacifico', cursive;
+  
+  /* 動畫變量 */
+  --animation-bounce: bounce 2s infinite;
+  --animation-pulse: pulse 2s infinite;
+  --animation-wiggle: wiggle 1s ease-in-out infinite;
+  
+  /* 空間系統 */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  
+  /* 圓角系統 - 更大膽的設計 */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 2.5rem;
+  --radius-blob: 50% 60% / 60% 50%;
+  --radius-organic: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  
+  /* 過渡動畫 */
+  --transition-bouncy: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-elastic: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 創意動畫定義 */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+  40%, 43% { transform: translate3d(0, -30px, 0); }
+  70% { transform: translate3d(0, -15px, 0); }
+  90% { transform: translate3d(0, -4px, 0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes wiggle {
+  0%, 7% { transform: rotateZ(0); }
+  15% { transform: rotateZ(-15deg); }
+  20% { transform: rotateZ(10deg); }
+  25% { transform: rotateZ(-10deg); }
+  30% { transform: rotateZ(6deg); }
+  35% { transform: rotateZ(-4deg); }
+  40%, 100% { transform: rotateZ(0); }
+}
+
+@keyframes rainbow-border {
+  0% { border-color: #FF6B35; }
+  25% { border-color: #F72585; }
+  50% { border-color: #7209B7; }
+  75% { border-color: #4ECDC4; }
+  100% { border-color: #FF6B35; }
+}
+
+/* 基礎樣式 */
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg-primary);
+  color: var(--color-gray-800);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* 創意按鈕系統 */
+.btn-creative {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--transition-bouncy);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-display);
+}
+
+.btn-creative::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-creative:hover::before {
+  left: 100%;
+}
+
+.btn-creative:hover {
+  transform: translateY(-3px) scale(1.02);
+  animation: var(--animation-pulse);
+}
+
+.btn-primary-creative {
+  background: var(--gradient-sunset);
+  color: white;
+  box-shadow: var(--shadow-colorful);
+}
+
+.btn-secondary-creative {
+  background: var(--gradient-ocean);
+  color: white;
+  box-shadow: var(--shadow-teal);
+}
+
+.btn-accent-creative {
+  background: var(--gradient-purple);
+  color: white;
+  box-shadow: var(--shadow-purple);
+}
+
+.btn-outline-creative {
+  background: transparent;
+  color: var(--color-primary);
+  border: 3px solid var(--color-primary);
+  animation: rainbow-border 3s linear infinite;
+}
+
+.btn-outline-creative:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* 創意卡片系統 */
+.card-creative {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-multi);
+  transition: all var(--transition-elastic);
+  position: relative;
+  overflow: hidden;
+  border: 3px solid transparent;
+}
+
+.card-creative::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--gradient-rainbow);
+  transform: scaleX(0);
+  transition: transform var(--transition-bouncy);
+  transform-origin: left;
+}
+
+.card-creative:hover::before {
+  transform: scaleX(1);
+}
+
+.card-creative:hover {
+  transform: translateY(-8px) rotate(1deg);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-multi), 0 30px 60px rgba(255, 107, 53, 0.2);
+}
+
+.card-blob {
+  border-radius: var(--radius-blob);
+  background: var(--gradient-warm);
+  color: white;
+}
+
+.card-organic {
+  border-radius: var(--radius-organic);
+  background: var(--gradient-ocean);
+  color: white;
+}
+
+/* 創意標題系統 */
+.heading-creative-hero {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  background: var(--gradient-rainbow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--space-6);
+  animation: var(--animation-pulse);
+}
+
+.heading-creative-section {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-4);
+  position: relative;
+}
+
+.heading-creative-section::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-sunset);
+  border-radius: 2px;
+}
+
+/* 創意搜尋介面 */
+.search-creative {
+  background: white;
+  border: 3px solid transparent;
+  border-radius: var(--radius-2xl);
+  padding: var(--space-2);
+  box-shadow: var(--shadow-multi);
+  transition: all var(--transition-bouncy);
+  position: relative;
+  overflow: hidden;
+}
+
+.search-creative::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: var(--gradient-rainbow);
+  border-radius: var(--radius-2xl);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+
+.search-creative:focus-within::before {
+  opacity: 1;
+}
+
+.search-creative:focus-within {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-multi), 0 20px 40px rgba(255, 107, 53, 0.3);
+}
+
+/* 創意標籤系統 */
+.tag-creative {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--transition-bouncy);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.tag-primary {
+  background: var(--gradient-sunset);
+  color: white;
+  box-shadow: var(--shadow-colorful);
+}
+
+.tag-secondary {
+  background: var(--gradient-ocean);
+  color: white;
+  box-shadow: var(--shadow-teal);
+}
+
+.tag-accent {
+  background: var(--gradient-purple);
+  color: white;
+  box-shadow: var(--shadow-purple);
+}
+
+.tag-creative:hover {
+  transform: translateY(-2px) scale(1.05);
+  animation: var(--animation-wiggle);
+}
+
+/* 創意導航 */
+.nav-creative {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 3px solid transparent;
+  border-image: var(--gradient-rainbow) 1;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-link-creative {
+  color: var(--color-gray-700);
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-bouncy);
+  position: relative;
+  font-family: var(--font-display);
+}
+
+.nav-link-creative:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.nav-link-creative.active {
+  background: var(--gradient-sunset);
+  color: white;
+  box-shadow: var(--shadow-colorful);
+}
+
+/* 背景裝飾元素 */
+.bg-decoration {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-circle-1 {
+  width: 200px;
+  height: 200px;
+  background: var(--gradient-ocean);
+  border-radius: 50%;
+  top: 10%;
+  right: 10%;
+  opacity: 0.1;
+  animation: var(--animation-bounce);
+}
+
+.bg-circle-2 {
+  width: 150px;
+  height: 150px;
+  background: var(--gradient-purple);
+  border-radius: var(--radius-blob);
+  bottom: 20%;
+  left: 5%;
+  opacity: 0.1;
+  animation: var(--animation-pulse);
+}
+
+.bg-circle-3 {
+  width: 100px;
+  height: 100px;
+  background: var(--gradient-warm);
+  border-radius: var(--radius-organic);
+  top: 60%;
+  right: 20%;
+  opacity: 0.1;
+  animation: var(--animation-wiggle);
+}
+
+/* 工具類 */
+.text-gradient-creative {
+  background: var(--gradient-rainbow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container-creative {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  position: relative;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .heading-creative-hero {
+    font-size: 2.5rem;
+  }
+  
+  .btn-creative {
+    padding: var(--space-2) var(--space-4);
+    font-size: 0.875rem;
+  }
+  
+  .card-creative {
+    padding: var(--space-4);
+  }
+}

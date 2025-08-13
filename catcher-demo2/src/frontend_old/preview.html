@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upwork Clone - React + Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            500: '#14a085',
+                            600: '#108a6f',
+                            700: '#0e7460',
+                            900: '#0c1820',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-primary-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">U</span>
+                    </div>
+                    <span class="ml-2 text-xl font-bold text-gray-900">Upwork</span>
+                </div>
+                
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-primary-500 font-medium">Find Talent</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-500 font-medium">Find Work</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-500 font-medium">Why Upwork</a>
+                    <a href="#" class="text-gray-700 hover:text-primary-500 font-medium">Enterprise</a>
+                </nav>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-primary-500 font-medium">Log In</a>
+                    <a href="#" class="bg-primary-500 text-white px-6 py-2 rounded-lg hover:bg-primary-600 transition-colors font-medium">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-gray-50 via-blue-50 to-blue-100 py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Connecting clients in<br />
+                need to freelancers<br />
+                who deliver
+            </h1>
+            
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Upwork is the world's work marketplace where millions of businesses and 
+                independent professionals connect and collaborate remotely.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a href="#" class="bg-primary-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-600 transition-colors text-lg">
+                    Hire talent
+                </a>
+                <a href="#" class="border-2 border-primary-500 text-primary-500 px-8 py-3 rounded-lg font-semibold hover:bg-primary-50 transition-colors text-lg">
+                    Find work
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Explore millions of pros
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <div class="p-6 rounded-lg border border-gray-200 hover:border-primary-500 hover:shadow-lg transition-all cursor-pointer">
+                    <div class="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">💻</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Development & IT</h3>
+                    <p class="text-gray-600 text-sm">Web, mobile & software development</p>
+                </div>
+                
+                <div class="p-6 rounded-lg border border-gray-200 hover:border-primary-500 hover:shadow-lg transition-all cursor-pointer">
+                    <div class="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">🎨</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Design & Creative</h3>
+                    <p class="text-gray-600 text-sm">Logo, web, graphic & design services</p>
+                </div>
+                
+                <div class="p-6 rounded-lg border border-gray-200 hover:border-primary-500 hover:shadow-lg transition-all cursor-pointer">
+                    <div class="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">🤖</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">AI Services</h3>
+                    <p class="text-gray-600 text-sm">AI development and machine learning</p>
+                </div>
+                
+                <div class="p-6 rounded-lg border border-gray-200 hover:border-primary-500 hover:shadow-lg transition-all cursor-pointer">
+                    <div class="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">📈</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Sales & Marketing</h3>
+                    <p class="text-gray-600 text-sm">Lead generation, market research & CRO</p>
+                </div>
+                
+                <div class="p-6 rounded-lg border border-gray-200 hover:border-primary-500 hover:shadow-lg transition-all cursor-pointer">
+                    <div class="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center mb-4">
+                        <span class="text-white text-xl">✍️</span>
+                    </div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Writing & Translation</h3>
+                    <p class="text-gray-600 text-sm">Content, copywriting & translation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                The world's work marketplace
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-primary-500 mb-2">18M+</div>
+                    <div class="text-gray-600 text-lg">Registered freelancers</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-primary-500 mb-2">5M+</div>
+                    <div class="text-gray-600 text-lg">Registered clients</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl lg:text-5xl font-bold text-primary-500 mb-2">$3.8B+</div>
+                    <div class="text-gray-600 text-lg">Paid to freelancers annually</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-500 to-blue-600 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Find your next hire for a short task or long-term growth
+            </h2>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="bg-white text-primary-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors text-lg">
+                    Explore Freelancers
+                </a>
+                <a href="#" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors text-lg">
+                    Post a Job
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">For Clients</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">How to hire</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Talent Marketplace</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Project Catalog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">For Talent</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">How to find work</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Direct Contracts</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Find freelance jobs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Help & support</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Success stories</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">About us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Careers</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors text-sm">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <div class="text-sm text-gray-400">
+                    © 2025 Upwork® Clone - React + Tailwind Demo
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
