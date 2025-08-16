@@ -1,0 +1,27 @@
+/* App.css - 基本樣式，主要使用 Tailwind */
+.App {
+  text-align: left;
+}
+
+/* 確保滾動行為順暢 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 自定義滾動條樣式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
