@@ -1,0 +1,13 @@
+.App {
+  min-height: 100vh;
+}
+
+/* 确保所有内容都正确显示 */
+* {
+  box-sizing: border-box;
+}
+
+/* 确保背景渐变覆盖整个应用 */
+#root {
+  min-height: 100vh;
+}
